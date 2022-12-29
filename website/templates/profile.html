@@ -1,0 +1,57 @@
+{% extends "base.html" %} {% block title %} Profile {% endblock %} {% block
+content %}
+
+<div class="bg-white shadow overflow-hidden rounded-lg my-12 mx-60">
+    <div class="py-5 px-6">
+        <h3 class="text-lg leading-6 font-medium text-gray-900">Profil</h3>
+        <p class="mt-1 max-w-2xl text-gray-500">Informations personnelles.</p>
+    </div>
+    <div class="border-t border-gray-200">
+        <dl>
+            <div class="flex items-center gap-4 bg-gray-50 px-4 py-5">
+                <div>
+                    <dt class="font-medium text-gray-500">Nom</dt>
+                    <dd class="mt-1 mb-3 text-gray-900 mt-0 col-span-2">{{ user.nom }}</dd>
+                </div>
+                <dd class="mb-4"><a class="col-span-3 px-4 py-5 font-medium text-indigo-600 hover:text-indigo-500"
+                                    href="/change_profile/nom">Modifier</a></dd>
+            </div>
+            <div class="flex items-center gap-4 bg-white px-4 py-5">
+                <div>
+                    <dt class="font-medium text-gray-500">Email</dt>
+                    <dd class="mt-1 mb-3 text-gray-900 mt-0 col-span-2">{{ user.email }}</dd>
+                </div>
+                <dd class="mb-4"><a class="col-span-3 px-4 py-5 font-medium text-indigo-600 hover:text-indigo-500"
+                                    href="/change_profile/email">Modifier<a/></dd>
+            </div>
+            <div class="flex items-center gap-4 bg-gray-50 px-4 py-5">
+                <div>
+                    <dt class="font-medium text-gray-500">Question secrète</dt>
+                    <dd class="mt-1 mb-3 text-gray-900 mt-0 col-span-2">{{ user.secret_question }}</dd>
+                    <dt class="font-medium text-gray-500">Réponse secrète</dt>
+                    <dd class="mt-1 text-gray-900 mt-0 col-span-2">{{ user.secret_response }}</dd>
+                </div>
+                <dd class="mb-4"><a class="col-span-3 px-4 py-5 px-6 font-medium text-indigo-600 hover:text-indigo-500"
+                                    href="/change_profile/secret_question">Modifier<a/></dd>
+            </div>
+            <div class="flex items-center gap-4 bg-white px-4 py-5">
+                <div>
+                    <dt class=" font-medium text-gray-500">Mot de passe</dt>
+                </div>
+                <dd class="mb-4"><a class="col-span-3 px-4 py-5 px-6 font-medium text-indigo-600 hover:text-indigo-500"
+                                    href="/change_profile/password">Modifier<a/></dd>
+            </div>
+
+            <div class="flex items-center gap-4 bg-gray-50 px-4 py-5">
+                <div>
+                    <dt class=" font-medium text-gray-500">à propos de {{ user.nom }}</dt>
+                    <dd class="mt-1  text-gray-900 mt-0 col-span-2">{{ user.user_description }}</dd>
+                </div>
+                <dd class="mb-4"><a class="col-span-3 px-4 py-5 px-6 font-medium text-indigo-600 hover:text-indigo-500"
+                                    href="/change_profile/user_description">Modifier<a/></dd>
+            </div>
+        </dl>
+    </div>
+</div>
+
+{% endblock %}
